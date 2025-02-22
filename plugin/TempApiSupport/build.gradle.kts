@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.dw.ar"
-version = "1.0"
+version = "1.1"
 
 
 val spaceUsername: String by project
