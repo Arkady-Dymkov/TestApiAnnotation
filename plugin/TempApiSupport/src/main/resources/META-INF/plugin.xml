@@ -1,0 +1,45 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.dw.ar.TempApiSupport</id>
+    <version>1.0</version>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>TempApiSupport</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+        <p>This plugin provides support for the TempAPI.</p>
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+<!--        <inspectionToolProvider implementation="com.dw.ar.tempapisupport.inspection.TempAPIInspectionProvider"/>-->
+        <globalInspection language="kotlin" shortName="TempAPI" displayName="TempAPI Inspection" enabledByDefault="true"
+                          level="WARNING" implementationClass="com.dw.ar.tempapisupport.inspection.TempAPIInspection"
+                          groupName="TemApi"/>
+        <lang.foldingBuilder language="kotlin"
+                             implementationClass="com.dw.ar.tempapisupport.folding.TempAPIFoldingBuilder"/>
+    </extensions>
+    <!--    <extensions defaultExtensionNs="com.intellij">-->
+    <!--        <localInspection language="kotlin" displayName="TempAPI Inspection" enabledByDefault="true" level="WARNING"-->
+    <!--                         groupName="TempAPI"-->
+    <!--                         implementationClass="com.dw.ar.tempapisupport.inspection.TempAPIInspection"/>-->
+    <!--        <lang.foldingBuilder language="kotlin"-->
+    <!--                             implementationClass="com.dw.ar.tempapisupport.folding.TempAPICodeFoldingBuilder"/>-->
+    <!--    </extensions>-->
+
+</idea-plugin>
