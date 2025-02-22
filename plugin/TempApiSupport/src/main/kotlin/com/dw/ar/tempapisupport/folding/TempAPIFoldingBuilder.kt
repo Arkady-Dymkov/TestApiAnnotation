@@ -23,7 +23,7 @@ class TempAPIFoldingBuilder : FoldingBuilderEx(), DumbAware {
                 val shortDescription = valueArgumentList?.arguments?.getOrNull(0)?.getArgumentExpression()?.text?.trim('"') ?: "TempAPI"
 
                 val range = TextRange(annotation.textRange.startOffset, valueArgumentList?.textRange?.endOffset ?: annotation.textRange.endOffset)
-                descriptors.add(FoldingDescriptor(annotation.node, range, null, shortDescription))
+                descriptors.add(FoldingDescriptor(annotation.node, range, null, "TempAPI($shortDescription)"))
             }
         }
         return descriptors.toTypedArray()

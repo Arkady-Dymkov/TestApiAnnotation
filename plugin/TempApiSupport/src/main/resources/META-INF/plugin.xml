@@ -18,28 +18,19 @@
         <p>This plugin provides support for the TempAPI.</p>
     ]]></description>
 
-    <!-- Product and plugin compatibility requirements.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.java</depends>
     <depends>org.jetbrains.kotlin</depends>
 
-    <!-- Extension points defined by the plugin.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-<!--        <inspectionToolProvider implementation="com.dw.ar.tempapisupport.inspection.TempAPIInspectionProvider"/>-->
-        <globalInspection language="kotlin" shortName="TempAPI" displayName="TempAPI Inspection" enabledByDefault="true"
-                          level="WARNING" implementationClass="com.dw.ar.tempapisupport.inspection.TempAPIInspection"
-                          groupName="TemApi"/>
+        <localInspection
+                language="kotlin"
+                groupPath="Kotlin"
+                groupName="TempAPI"
+                enabledByDefault="true"
+                level="WARNING"
+                implementationClass="com.dw.ar.tempapisupport.inspection.TempAPIKotlinInspection" displayName="TempAPI"/>
         <lang.foldingBuilder language="kotlin"
                              implementationClass="com.dw.ar.tempapisupport.folding.TempAPIFoldingBuilder"/>
     </extensions>
-    <!--    <extensions defaultExtensionNs="com.intellij">-->
-    <!--        <localInspection language="kotlin" displayName="TempAPI Inspection" enabledByDefault="true" level="WARNING"-->
-    <!--                         groupName="TempAPI"-->
-    <!--                         implementationClass="com.dw.ar.tempapisupport.inspection.TempAPIInspection"/>-->
-    <!--        <lang.foldingBuilder language="kotlin"-->
-    <!--                             implementationClass="com.dw.ar.tempapisupport.folding.TempAPICodeFoldingBuilder"/>-->
-    <!--    </extensions>-->
-
 </idea-plugin>

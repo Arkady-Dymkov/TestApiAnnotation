@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.dw.ar"
-version = "1.0-SNAPSHOT"
+version = "1.0"
 
 
 val spaceUsername: String by project
@@ -26,8 +26,6 @@ dependencies {
     implementation("com.dw.ar:TestApiAnnotation:1.0")
 }
 
-// Configure Gradle IntelliJ Plugin
-// Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
     version.set("2024.1.7")
     type.set("IC") // Target IDE Platform

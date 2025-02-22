@@ -1,5 +1,6 @@
 package com.dw.ar.tempapisupport.folding
 
+import com.dw.ar.TempAPI
 import com.intellij.lang.ASTNode
 import com.intellij.lang.folding.FoldingBuilderEx
 import com.intellij.lang.folding.FoldingDescriptor
